@@ -13,6 +13,16 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
+      },
+      {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico|mp4|webm|wav|mp3|m4a|aac|oga)$/,
         use: [
           {
